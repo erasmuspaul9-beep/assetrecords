@@ -1,0 +1,260 @@
+/* =============================================================================
+   AssetRecords Design System — colors_and_type.css
+   The single source of truth for tokens. Import this into every artifact.
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype-variations'),
+       url('fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype-variations'),
+       url('fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* -------------------------------------------------------------------------
+     BRAND COLORS
+     "AR Navy" is the workhorse: backgrounds, text, primary surface.
+     "AR Green" appears in the logo mark and as an accent/success cue.
+     ------------------------------------------------------------------------- */
+  --ar-navy:         #0F2F53; /* primary brand, button fill, nav background */
+  --ar-navy-deep:    #0C2138; /* darker navy used for full-bleed hero backgrounds */
+  --ar-navy-ink:     #040F43; /* deepest -- top app bar in product */
+  --ar-green:        #5EC090; /* brand mark green */
+  --ar-green-dark:   #449F7E; /* hover/press for green accents */
+
+  /* AR Primary scale (greens stepping down into navy) */
+  --ar-prim-00: #F6FCF9;
+  --ar-prim-0:  #E8F7F2;
+  --ar-prim-1:  #D9F1EA;
+  --ar-prim-2:  #B1E3D3;
+  --ar-prim-3:  #8AD3C0;
+  --ar-prim-4:  #5EC090;
+  --ar-prim-5:  #449F7E;
+  --ar-prim-6:  #296870;
+  --ar-prim-7:  #1B4762;
+  --ar-prim-8:  #0F2F53;
+  --ar-prim-9:  #0C2138;
+
+  /* Hero gradient — same one used in the product login screen */
+  --ar-hero-gradient:
+    linear-gradient(rgba(36,21,148,0.20) 0%, rgba(8,14,84,0.20) 100%),
+    linear-gradient(180deg, #5EC090 0%, #0E0C38 52%, #0C2138 100%);
+
+  /* -------------------------------------------------------------------------
+     NEUTRALS (Mantine "dark" scale used across the product)
+     ------------------------------------------------------------------------- */
+  --gray-00: #FAFAFA;
+  --gray-0:  #F8F9FA;
+  --gray-1:  #F1F3F5;
+  --gray-2:  #E9ECEF;
+  --gray-3:  #DEE2E6;
+  --gray-4:  #CED4DA;
+  --gray-5:  #ADB5BD;
+  --gray-6:  #868E96;
+  --gray-7:  #495057;
+  --gray-8:  #343A40;
+  --gray-9:  #212529;
+
+  --dark-0: #F4F4F4;
+  --dark-1: #C1C2C5;
+  --dark-2: #A6A7AB;
+  --dark-3: #909296;
+  --dark-4: #5C5F66;
+  --dark-5: #373A40;
+  --dark-6: #2C2E33;
+  --dark-7: #25262B;
+  --dark-8: #1A1B1E;
+  --dark-9: #141517;
+
+  /* -------------------------------------------------------------------------
+     SEMANTIC ACCENTS (Mantine palette used in the product)
+     The product uses blue heavily as a secondary action color.
+     ------------------------------------------------------------------------- */
+  --blue-0: #E7F5FF;  --blue-1: #D0EBFF;  --blue-2: #A5D8FF;
+  --blue-3: #74C0FC;  --blue-4: #4DABF7;  --blue-5: #339AF0;
+  --blue-6: #228BE6;  --blue-7: #1C7ED6;  --blue-8: #1971C2;  --blue-9: #1864AB;
+
+  --red-0: #FFF5F5;  --red-5: #FF6B6B;  --red-6: #FA5252;  --red-7: #F03E3E;
+  --orange-0: #FFF4E6; --orange-5: #FF922B; --orange-6: #FD7E14;
+  --yellow-0: #FFF9DB; --yellow-5: #FCC419; --yellow-6: #FAB005;
+  --teal-0: #E6FCF5;  --teal-5: #20C997;  --teal-6: #12B886;
+  --indigo-0: #EDF2FF; --indigo-5: #5C7CFA; --indigo-6: #4C6EF5;
+
+  /* -------------------------------------------------------------------------
+     SEMANTIC TOKENS — use these in components, not the raw palette
+     ------------------------------------------------------------------------- */
+  --bg:           #FFFFFF;
+  --bg-subtle:    #F8FAFF;            /* off-white tinted toward AR navy */
+  --bg-muted:     #F1F3F5;
+  --surface:      #FFFFFF;
+  --surface-dark: var(--ar-navy);
+
+  --fg:           #101113;            /* near-black body text */
+  --fg-strong:    #0C2138;            /* navy headings */
+  --fg-muted:     #5C5F66;            /* secondary text */
+  --fg-subtle:    #868E96;            /* tertiary / placeholder */
+  --fg-on-dark:   #FFFFFF;
+  --fg-on-dark-muted: rgba(255,255,255,0.72);
+
+  --border:       #E9ECEF;
+  --border-strong:#CED4DA;
+  --border-on-dark: rgba(255,255,255,0.12);
+
+  --accent:        var(--ar-navy);    /* primary CTA fill */
+  --accent-hover:  #1B4762;
+  --accent-press:  #0C2138;
+  --accent-soft:   #F6F9FF;           /* "light" button fill */
+  --accent-subtle: #EEF3FF;           /* "subtle" button fill */
+  --accent-fg:     #FFFFFF;
+
+  --success: var(--ar-green);
+  --success-fg: #FFFFFF;
+  --danger:  var(--red-6);
+  --warning: var(--orange-6);
+  --info:    var(--blue-6);
+
+  /* -------------------------------------------------------------------------
+     SHADOWS — tuned for very subtle navy elevation
+     ------------------------------------------------------------------------- */
+  --shadow-card:
+    0 1px 1px 0 rgba(62,70,113,0.06),
+    1px 1px 8.4px 0 rgba(62,70,113,0.08);
+  --shadow-pop:
+    0 10px 10px -5px rgba(0,0,0,0.04),
+    0 20px 25px -5px rgba(0,0,0,0.05),
+    0 1px 3px 0 rgba(0,0,0,0.05);
+  --shadow-nav: 0 1px 26px 0 rgba(0,0,0,0.10);
+  --shadow-focus: 0 0 0 3px rgba(15,47,83,0.18);
+
+  /* -------------------------------------------------------------------------
+     RADII (Mantine xs–xl used across the product)
+     ------------------------------------------------------------------------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* -------------------------------------------------------------------------
+     SPACING — 4px base, named t-shirt scale matching product spacing tokens
+     ------------------------------------------------------------------------- */
+  --space-2xs: 4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* -------------------------------------------------------------------------
+     TYPE
+     Product uses SF Pro + Inter. SF Pro is Apple-licensed; on the web we
+     fall back to Inter (the secondary used inside the product). Manrope
+     is reserved for display/cover treatments — see /Cover/Thumbnail.
+     ------------------------------------------------------------------------- */
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  --font-accent:  'Manrope', 'Inter', sans-serif; /* posters, cover, big numbers */
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale — from /Typography (h1=34 → h6=14, body xl→xs) */
+  --fz-h1: 56px;  /* marketing display ↑ from product 34 */
+  --fz-h2: 40px;
+  --fz-h3: 28px;
+  --fz-h4: 22px;
+  --fz-h5: 18px;
+  --fz-h6: 16px;
+
+  --fz-prod-h1: 34px;
+  --fz-prod-h2: 26px;
+  --fz-prod-h3: 22px;
+  --fz-prod-h4: 18px;
+  --fz-prod-h5: 16px;
+  --fz-prod-h6: 14px;
+
+  --fz-xl: 20px;
+  --fz-lg: 18px;
+  --fz-md: 16px;
+  --fz-sm: 14px;
+  --fz-xs: 12px;
+
+  --lh-tight:   1.15;
+  --lh-heading: 1.30;
+  --lh-body:    1.55;
+
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-caps:    0.08em;
+}
+
+/* =============================================================================
+   SEMANTIC ELEMENT DEFAULTS
+   ============================================================================= */
+html, body { background: var(--bg); color: var(--fg); }
+
+body, p, li, td, input, button, select, textarea {
+  font-family: var(--font-sans);
+  font-size: var(--fz-md);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-heading);
+  color: var(--fg-strong);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fz-h1); line-height: var(--lh-tight); letter-spacing: var(--tracking-display); }
+h2 { font-size: var(--fz-h2); line-height: var(--lh-tight); letter-spacing: var(--tracking-display); }
+h3 { font-size: var(--fz-h3); }
+h4 { font-size: var(--fz-h4); }
+h5 { font-size: var(--fz-h5); }
+h6 { font-size: var(--fz-h6); }
+
+p { margin: 0 0 1em 0; text-wrap: pretty; color: var(--fg); }
+small { font-size: var(--fz-xs); color: var(--fg-muted); }
+
+code, kbd, pre { font-family: var(--font-mono); font-size: 0.92em; }
+code { background: var(--bg-muted); padding: 0.1em 0.35em; border-radius: var(--radius-sm); }
+
+a { color: var(--ar-navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--ar-green-dark); }
+
+hr { border: none; border-top: 1px solid var(--border); margin: var(--space-xl) 0; }
+
+::selection { background: var(--ar-prim-2); color: var(--ar-navy-deep); }
+
+/* Eyebrow / overline */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fz-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--ar-green-dark);
+}
